@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+            form 의 이해를 하는 공부
+            form : 사용자로부터 데이터를 입력받는 요소
+            form tag : 폼을 생성하는 최상위 요소
+            동작방법
+            1.폼이 있는 웹 페이지를 방문합니다.
+            2.폼 내용을 입력합니다.
+            3.폼 안에 있는 모든 데이터를 웹 서버로 보냅니다.
+            4.웹 서버는 받은 폼 데이터를 처리하기 위해 웹 프로그램으로 넘깁니다.
+            5.웹 플그램은 폼 데이터를 처리합니다.
+            6.처리겨로가에 따른 새로운 html 페이지를 웹 서버에 보냅니다.
+            7.웹 서버는 받은 html 페이지를 브라우저에 보냅니다.
+            8.브라우저는 받은 html 페이지를 보냅니다.
+
+            위를 정리하면
+            1.데이터 입력후 서버에 보냄
+            2.서버내부에있는 프로그램에서 받은 데이터 처리
+            3.서버가 다시 브라우저로 반환해줌
+
+            참조문서 : https://www.nextree.co.kr/p8428/
+                       + chatgpt
+        -->
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>form tag</h1>
+        <ul>
+            <h3>form tag 속성</h3>
+            <li>name : 폼을 식별하기위한 이름</li>
+            <li>action : 폼을 전송할 서버 쪽 스크립트 파일을 지정</li>
+            <li>accept-charset : 폼 전송을 사용할 문자 인코딩을 지정</li>
+            <li>target : 어디서 창을 열껀지 지정</li>
+            <li>method : 폼을 서버에 전송할 http 메소드를 지정(GET or POST)</li>
+            <ul>
+                <li>GET 방식 : 폼 데이터를 가져와 서버에 보낼 때, 폼 데이터를 URL 끝에 붙여 전송함<br>
+                    ex : http://localhost8080/form.jsp?name=jun&address=suwon</li>
+                <li>POST 방식 : 폼 데이터를 가져와 서버에 보낼 때, 내부적으로 보이지않게 전송<br>
+                    ex : http://localhost8080/form.jsp</li>
+                <p>정리 : GET 방식은 지정된 리소스에서 자원을 읽을 경우에 GET방식 사용<br>
+                          나머지 방식에는 POST방식을 사용 WHY? GET방식은 데이터가 외부에 노출되어 보안에 취약함
+                </p>width: 150px
+            </ul>
+        </ul>
+        <hr>
+        <br>
+        <h2>fieldset tag, legend tag</h2>
+        <p>위 두 tag는 form tag 내부에 있는 element를 그룹화 할 때 사용함</p>
+        <form action="#">
+            <fieldset style="width: 500px;">
+                <!-- fieldset tag : form element을 그룹화 하는 tag -->
+                <legend>개인 정보 입력</legend>
+                <!-- legend tag : 그룹의 이름을 정하는 tag -->
+                    이름 : <input type="text" name="name"/><br><br>
+                    이름 : <input type="text" name="age"/>
+            </fieldset>
+        </form>
+        <hr>
+
+        <h2>input tag</h2>
+        <p><b>input tag</b> : 사용자가 폼 태그에 입력할 수 있는공간을 만들어주는 tag</p>
+        <p>input tag의 속성들입니다</p>
+        <ul>
+            <li>type : input tag을 변경할 수 있습니다</li><br>
+            <form>
+                <fieldset>
+                    <legend>type의 값들</legend>
+                        text : <input type="text"><br><br>
+                        radio : <input type="radio"><br><br>
+                        checkbox : <input type="checkbox"><br><br>
+                        password : <input type="password"><br><br>
+                        button : <input type="button"><br><br>
+                        hidden : <input type="hidden"><br><br>
+                        file(fileupload) : <input type="file"><br><br>
+                        submit : <input type="submit"><br><br>
+                        reset : <input type="reset"><br><br>
+                </fieldset>
+            </form>
+            <li>name : 태그 이름을 지정</li>
+            - name_ex : <input type="text" name="오렌지">
+            <li>readonly : input tag를 읽기전용으로 함</li>
+            - readonly_ex : <input type="text" readonly>
+            <li>maxlength : 최대 글자수를 지정</li>
+            - maxlength_ex : <input type="text" maxlength="5">
+            <li>required : 필수 태그로 지정됨 -> 이 태그가 입력되지 않고 submit 버튼 누르면 에러메세지 뜸</li>
+            <li>autofocus : 이 속성을 지정한 태그로 포커스됨 (HTML5 추가사항)</li>
+            <li>placeholder : 태그에 입력할 힌트를 준다 (HTML5 추가사항)</li>
+            - placeholder : <input type="text" placeholder="이렇게 입력">
+            <li>pattern : <b>정규표현식</b>을 사용하여 유효한 값 입력받을 떄 사용 (HTML5 추가사항)</li>
+        </ul>
+        <hr>
+
+        <h2>목록 tag</h2>
+        <p>
+            <b>select</b> : 항목을 선택할 수 있는 태그<br>
+            <ul>
+                <p>select의 속성</p>
+                <li>size : 한번에 표시할 수를 의미</li>
+                <li>multiple : 다중선택을 허용할것인지</li>
+            </ul>
+            아래 태그는 select의 하위 tag<br>
+            <ul>
+                <li>optgroup tag: select tag 내부에서 목록들을 그룹화할 경우에 사용<br>
+                - label 속성을 사용하여 그룹 이름을 지정
+                </li>
+                <li>option tag : 목록들을 말함<br>
+                   - optgroup tag 하위 tag로 사용하기도 함
+                </li>
+            </ul>
+            <form>
+                <fieldset style="width: 200px;">
+                    <legend>목록 tag ex</legend>
+                        교시 : <br>
+                        <select size="5">
+                            <option value="value1">1교시</option>
+                                <option value="value2">2교시</option>
+                                <option value="value3">3교시</option>
+                                <option value="value4">4교시</option>
+                                <option value="value5">5교시</option>
+                        </select><br><br>
+                        교시(multiple 추가)<br>
+                        <select size="5" multiple>
+                            <option value="value1">1교시</option>
+                            <option value="value2">2교시</option>
+                            <option value="value3">3교시</option>
+                            <option value="value4">4교시</option>
+                            <option value="value5">5교시</option>
+                        </select><br><br>
+                        optgroup 추가<br>
+                        <select size="5" multiple>
+                            <optgroup label="점심전">
+                                <option value="value1">1교시</option>
+                                <option value="value2">2교시</option>
+                                <option value="value3">3교시</option>
+                                <option value="value4">4교시</option>
+                            </optgroup>
+                            <optgroup label="점심후">
+                                <option value="value5">5교시</option>
+                                <option value="value6">6교시</option>
+                                <option value="value7">7교시</option>
+                            </optgroup>
+                        </select><br><br>
+                        radio button select 써보기<br>
+                        <select size="5">
+                            <input type="radio">1교시<br>
+                            <input type="radio">2교시<br>
+                            <input type="radio">3교시<br>
+                            <input type="radio">4교시<br>
+                            <input type="radio">5교시<br>
+                        </select>
+                </fieldset>
+            </form>
+        </p>
+    </body>
+</html>
