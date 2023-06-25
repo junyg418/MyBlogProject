@@ -5,8 +5,76 @@
         <meta title="2023-06-24 학습본 정리">
         <!--
             2023-06-25 작성
-
+            table
+            form
+            input
+            select 학습
         -->
-
+        <style>
+            table {
+              border-collapse: collapse; /* 인접한 테두리를 병합하여 일관된 테두리 스타일 적용 */
+              width: 100%; /* 테이블이 부모 요소의 100% 너비를 차지하도록 설정 */
+            }
+            table, th, td {
+              border: 1px solid black; /* 테두리 스타일과 두께 설정 */
+              padding: 8px; /* 셀 내부 여백 설정 */
+            }
+        </style>
     </head>
+    <body>
+        <h1>2023-06-24 복습본</h1>
+        
+        <hr>
+        <br>
+        <h2>table 복습</h2>
+        <table>
+            <caption>caption은 제목을 뜻하는 tag</caption>
+            <thead>
+                <tr>
+                    <th>두꺼운 제목 열</th>
+                    <th>th 이런식으로</th>
+                    <th>사용함 th가 table column head 의미하는거였네 호호</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>이런식으로 일반내용</td>
+                    <td>들어가고</td>
+                    <td>td tag는 column data 들어감</td>
+                </tr>
+                <tr>
+                    <td>이번에는 tr tag</td>
+                    <td>tr은 새로운 row를 생성하는</td>
+                    <td>tag입니돠</td>
+                </tr>
+                <tr>
+                    <td>colspan, rowspan 같은 데이터는 column tag 내부에 속하는 속성임</td>
+                    <td colspan="2">이런식으로 하면 두 칸을 사용할 수 있지</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">이렇게 rowspan을 2로 설정</td>
+                    <td colspan="2">여기는 colspan 2</td>
+                </tr>
+                <tr>
+                    <td colspan="2">여기는 colomn data를 2개 넣어야해</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+        <p>위와 같은 내용으로 table 관련 복습은 끝이다</p>
+
+        <hr>
+        <br>
+        <h2>form 복습</h2>
+        <form action="">
+            <fieldset>
+                <!-- fieldset은 데이터 그룹을 관리하는 set -->
+                <legend>legend가 그룹 이름</legend>
+                이런식으로 : <input type="text"><br><br>
+                이름 : <input type="text"><br><br>
+                적어 : <input type="text"><br><br>
+            </fieldset>
+
+        </form>
+    </body>
 </html>
