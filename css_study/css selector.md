@@ -27,3 +27,12 @@ Pseudo-element 선택자 : '::'연산자 (이중 콜론)
 
 일반 형제 결합자 : "~" 결합자  
     - 부모가 같고 앞쪽 선택자 뒤에 있는 뒷쪽 선택자에 적합하는 요소 선택  
+
+
+## 2023-07-03  
+
+link tag : 해당 문서와 외부 소스 사이의 관계를 정의할 때 사용  
+ > 빈 태그이므로 닫는 태그가 없다.  
+
+ex : <link rel="stylesheet" type="text/css" herf="sytle.css"> 와 같이 사용한다  
+css stylesheet을 정의할 때 사용하긴 한다.  
